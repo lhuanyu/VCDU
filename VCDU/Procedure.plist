@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AND1A</key>
+	<array>
+		<string>AND</string>
+		<string>DADAT</string>
+		<string>JTN35</string>
+		<string>JTN30</string>
+		<string>JTN</string>
+		<string>CGT</string>
+	</array>
+	<key>AND2A</key>
+	<array>
+		<string>AND</string>
+		<string>DADAT</string>
+		<string>SS004</string>
+		<string>SS003</string>
+		<string>SS002</string>
+	</array>
+	<key>ZSSSILS Y 36L</key>
+	<array>
+		<string>ZSSSCI36L</string>
+		<string>ZSSSFF36L</string>
+		<string>ZSSSRW36L</string>
+		<string>(990)</string>
+		<string>CGT</string>
+	</array>
+	<key>ZSSSILS Y 36R</key>
+	<array>
+		<string>ZSSSCI36R</string>
+		<string>ZSSSRW36R</string>
+		<string>(990)</string>
+		<string>CGT</string>
+	</array>
+	<key>CDY8C</key>
+	<array>
+		<string>AA261</string>
+		<string>AA264</string>
+		<string>AA265</string>
+		<string>AA266</string>
+		<string>CDY</string>
+	</array>
+</dict>
+</plist>

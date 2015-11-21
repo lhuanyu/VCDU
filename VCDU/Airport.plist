@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ZPPP</key>
+	<dict>
+		<key>Latitude</key>
+		<real>25.099167</real>
+		<key>Longitude</key>
+		<real>102.926667</real>
+	</dict>
+	<key>ZUUU</key>
+	<dict>
+		<key>Latitude</key>
+		<real>30.578333</real>
+		<key>Longitude</key>
+		<real>103.946944</real>
+	</dict>
+	<key>ZSPD</key>
+	<dict>
+		<key>Arrive</key>
+		<dict>
+			<key>YDC11D</key>
+			<array/>
+			<key>YDC21D</key>
+			<array/>
+		</dict>
+		<key>Departure</key>
+		<dict>
+			<key>New item - 12</key>
+			<array/>
+			<key>New item - 11</key>
+			<array/>
+			<key>New item - 10</key>
+			<array/>
+			<key>New item - 9</key>
+			<array/>
+			<key>New item - 8</key>
+			<array/>
+			<key>New item - 7</key>
+			<array/>
+			<key>New item - 6</key>
+			<array/>
+			<key>New item - 5</key>
+			<array/>
+			<key>New item - 4</key>
+			<array/>
+			<key>New item - 3</key>
+			<array/>
+			<key>New item - 2</key>
+			<array/>
+			<key>New item</key>
+			<array/>
+			<key>CDY11D</key>
+			<array>
+				<string>RW36L</string>
+				<string>RW36R</string>
+			</array>
+			<key>CDY21D</key>
+			<array>
+				<string>RW36L</string>
+			</array>
+		</dict>
+		<key>Runaway</key>
+		<dict>
+			<key>36L</key>
+			<dict/>
+			<key>36R</key>
+			<dict/>
+		</dict>
+		<key>Latitude</key>
+		<real>31.143333</real>
+		<key>Longitude</key>
+		<real>121.805278</real>
+	</dict>
+	<key>ZBAA</key>
+	<dict>
+		<key>Arrive</key>
+		<dict>
+			<key>YDC11D</key>
+			<dict>
+				<key>RW36R</key>
+				<array>
+					<string>ILS Y 36R</string>
+					<string>ILS Z 36R</string>
+					<string>ILS X 36R</string>
+				</array>
+				<key>RW36L</key>
+				<array>
+					<string>ILS Y 36L</string>
+					<string>ILS Z 36L</string>
+					<string>ILS X 36L</string>
+				</array>
+			</dict>
+			<key>YDC21D</key>
+			<dict/>
+		</dict>
+		<key>Departure</key>
+		<dict>
+			<key>CDY8C</key>
+			<dict>
+				<key>RW18R</key>
+				<string>RW18R</string>
+				<key>RW36L 不可用</key>
+				<string>RW36L</string>
+				<key>RW36R 不可用</key>
+				<string>RW36R</string>
+			</dict>
+			<key>CDY11D 不可用</key>
+			<dict>
+				<key>RW18L 不可用</key>
+				<string>RW18L</string>
+				<key>RW36L 不可用</key>
+				<string>RW36L</string>
+				<key>RW36R 不可用</key>
+				<string>RW36R</string>
+			</dict>
+		</dict>
+		<key>Latitude</key>
+		<real>40.08</real>
+		<key>Longitude</key>
+		<real>116.584444</real>
+	</dict>
+	<key>ZSSS</key>
+	<dict>
+		<key>Departure</key>
+		<dict>
+			<key>CDY11D</key>
+			<dict>
+				<key>RW18L</key>
+				<string>RW18L</string>
+				<key>RW36L</key>
+				<string>RW36L</string>
+				<key>RW36R</key>
+				<string>RW36R</string>
+			</dict>
+		</dict>
+		<key>Arrive</key>
+		<dict>
+			<key>AND2A</key>
+			<dict>
+				<key>RW36L</key>
+				<array>
+					<string>ILS Y 36L</string>
+					<string>ILS Y 36R</string>
+					<string>ILS X 36L 不可用</string>
+					<string>ILS Y 18R 不可用</string>
+				</array>
+			</dict>
+			<key>AND2F 不可用</key>
+			<dict>
+				<key>RW18L</key>
+				<array>
+					<string>ILS Y 18L 不可用</string>
+					<string>ILS Y 18 不可用</string>
+				</array>
+				<key>RW36L</key>
+				<array>
+					<string>ILS Y 36L</string>
+					<string>ILS X 36L</string>
+				</array>
+			</dict>
+		</dict>
+		<key>Longitude</key>
+		<real>121.336388888889</real>
+		<key>Latitude</key>
+		<real>31.1980555555556</real>
+	</dict>
+</dict>
+</plist>

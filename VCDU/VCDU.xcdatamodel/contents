@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Airport" representedClassName="Airport" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="procedure" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Procedure" inverseName="airport" inverseEntity="Procedure" syncable="YES"/>
+        <relationship name="runaway" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Runaway" inverseName="airport" inverseEntity="Runaway" syncable="YES"/>
+    </entity>
+    <entity name="Approach" representedClassName="Approach" syncable="YES">
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="approach" inverseEntity="Performance" syncable="YES"/>
+    </entity>
+    <entity name="FlightPlan" representedClassName="FlightPlan" syncable="YES">
+        <attribute name="approach" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="arrive" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departure" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="flightNO" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="takeoff" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="plan" inverseEntity="Performance" syncable="YES"/>
+        <relationship name="waypoint" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Waypoint" inverseName="plan" inverseEntity="Waypoint" syncable="YES"/>
+    </entity>
+    <entity name="FuelManagement" representedClassName="FuelManagement" syncable="YES">
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="fuel" inverseEntity="Performance" syncable="YES"/>
+    </entity>
+    <entity name="N1Limit" representedClassName="N1Limit" syncable="YES">
+        <attribute name="flextemp" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="n1Ref" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="oat" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="n1" inverseEntity="Performance" syncable="YES"/>
+    </entity>
+    <entity name="Performance" representedClassName="Performance" syncable="YES">
+        <attribute name="altnAltitude" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="cargo" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="climbWindAngle" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="climbWindSpeed" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="cruiseWindAngle" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="cruiseWindSpeed" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="crzAltitude" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="descentWindAngle" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="descentWindSpeed" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="passengerNumber" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="passengerWeight" optional="YES" attributeType="Integer 64" defaultValueString="77" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="approach" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Approach" inverseName="performance" inverseEntity="Approach" syncable="YES"/>
+        <relationship name="fuel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FuelManagement" inverseName="performance" inverseEntity="FuelManagement" syncable="YES"/>
+        <relationship name="n1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="N1Limit" inverseName="performance" inverseEntity="N1Limit" syncable="YES"/>
+        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlightPlan" inverseName="performance" inverseEntity="FlightPlan" syncable="YES"/>
+        <relationship name="takeoff" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Takeoff" inverseName="performance" inverseEntity="Takeoff" syncable="YES"/>
+        <relationship name="vnav" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vnav" inverseName="performance" inverseEntity="Vnav" syncable="YES"/>
+    </entity>
+    <entity name="Procedure" representedClassName="Procedure" syncable="YES">
+        <attribute name="isDeparture" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="airport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="procedure" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="runaway" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Runaway" inverseName="procedure" inverseEntity="Runaway" syncable="YES"/>
+        <relationship name="waypoint" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Waypoint" inverseName="procedure" inverseEntity="Waypoint" syncable="YES"/>
+    </entity>
+    <entity name="Runaway" representedClassName="Runaway" syncable="YES">
+        <attribute name="heading" optional="YES" attributeType="Double" minValueString="0" maxValueString="360" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isDepatrure" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="airport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="runaway" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="procedure" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Procedure" inverseName="runaway" inverseEntity="Procedure" syncable="YES"/>
+    </entity>
+    <entity name="Takeoff" representedClassName="Takeoff" syncable="YES">
+        <attribute name="cg" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="leveloffHeight" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="obstacleDistance" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="obstacleHeight" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="pAltitude" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="runawaySlope" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="runawayWind" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="tofl" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="windAngle" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Integer 64" syncable="YES"/>
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="takeoff" inverseEntity="Performance" syncable="YES"/>
+    </entity>
+    <entity name="Vnav" representedClassName="Vnav" syncable="YES">
+        <attribute name="crzAltitude" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="tansAltitude" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="tansFlightLevel" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="performance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Performance" inverseName="vnav" inverseEntity="Performance" syncable="YES"/>
+    </entity>
+    <entity name="Waypoint" representedClassName="Waypoint" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isAirport" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isCreatedByPilot" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="navigation" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="plan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlightPlan" inverseName="waypoint" inverseEntity="FlightPlan" syncable="YES"/>
+        <relationship name="procedure" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Procedure" inverseName="waypoint" inverseEntity="Procedure" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Airport" positionX="-9567" positionY="314" width="128" height="118"/>
+        <element name="Approach" positionX="-9137" positionY="639" width="128" height="58"/>
+        <element name="FlightPlan" positionX="-9792" positionY="504" width="128" height="208"/>
+        <element name="FuelManagement" positionX="-9128" positionY="923" width="128" height="58"/>
+        <element name="N1Limit" positionX="-9540" positionY="869" width="128" height="103"/>
+        <element name="Performance" positionX="-9360" positionY="522" width="128" height="313"/>
+        <element name="Procedure" positionX="-9803" positionY="99" width="128" height="118"/>
+        <element name="Runaway" positionX="-9812" positionY="287" width="128" height="148"/>
+        <element name="Takeoff" positionX="-9128" positionY="702" width="128" height="208"/>
+        <element name="Vnav" positionX="-9137" positionY="477" width="128" height="103"/>
+        <element name="Waypoint" positionX="-9567" positionY="464" width="128" height="193"/>
+    </elements>
+</model>
