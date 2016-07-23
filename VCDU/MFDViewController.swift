@@ -22,17 +22,17 @@ class MFDViewController: UIViewController {
     
     @IBOutlet weak var display: SKView!{
         didSet {
-            let recall = UIScreenEdgePanGestureRecognizer(target: self, action: "recallControlPanel:")
+            let recall = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(MFDViewController.recallControlPanel(_:)))
             recall.edges = UIRectEdge.Right
             display.addGestureRecognizer(recall)
             display.showsFPS = true
             display.showsNodeCount = true
             
             
-            let adjustHeading = UIRotationGestureRecognizer(target: self, action: "headingKnob:")
+            let adjustHeading = UIRotationGestureRecognizer(target: self, action: #selector(MFDViewController.headingKnob(_:)))
             display.addGestureRecognizer(adjustHeading)
             
-            let moveCursor = UIPanGestureRecognizer(target: self, action: "moveCursor:")
+            let moveCursor = UIPanGestureRecognizer(target: self, action: #selector(MFDViewController.moveCursor(_:)))
             moveCursor.maximumNumberOfTouches = 1
             moveCursor.requireGestureRecognizerToFail(recall)
             display.addGestureRecognizer(moveCursor)
@@ -47,7 +47,7 @@ class MFDViewController: UIViewController {
     
     @IBOutlet weak var controlPanel: UIView! {
         didSet{
-            let hide = UISwipeGestureRecognizer(target:self, action: "hideControlPanel:")
+            let hide = UISwipeGestureRecognizer(target:self, action: #selector(MFDViewController.hideControlPanel(_:)))
             hide.direction = UISwipeGestureRecognizerDirection.Right
             hide.numberOfTouchesRequired = 2
             controlPanel.addGestureRecognizer(hide)

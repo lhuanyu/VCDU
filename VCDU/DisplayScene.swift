@@ -259,14 +259,14 @@ class DisplayScene: SKScene
     
     //MARK: - Other Indicators
 
-    private lazy var groundSpeedLabel:SKLabelNode = {[unowned self] in
+    private lazy var groundSpeedLabel:SKLabelNode = {
     let label = SKLabelNode(text: "0", fontSize: 12, horizontalAlignment: .Center, verticalAlignment: .Baseline)
     label.fontColor = SKColor.magentaColor()
     label.position = CGPointMake(-160, 0)
     return label
     }()
     
-    private lazy var trueAirSpeedLabel:SKLabelNode = {[unowned self] in
+    private lazy var trueAirSpeedLabel:SKLabelNode = {
         let label = SKLabelNode(text: "0", fontSize: 12, horizontalAlignment: .Center, verticalAlignment: .Baseline)
         label.fontColor = SKColor.greenColor()
         label.position = CGPoint(x:-95,y:0)
@@ -274,7 +274,7 @@ class DisplayScene: SKScene
     }()
     
     
-    private lazy var isaLabel:SKLabelNode = {[unowned self] in
+    private lazy var isaLabel:SKLabelNode = {
         let label = SKLabelNode(text: "0", fontSize: 12, horizontalAlignment: .Center, verticalAlignment: .Baseline)
         label.fontColor = SKColor.greenColor()
         label.position = CGPoint(x:-25,y:0)
@@ -282,14 +282,14 @@ class DisplayScene: SKScene
         }()
     
     
-    private lazy var satLabel:SKLabelNode = {[unowned self] in
+    private lazy var satLabel:SKLabelNode = {
         let label = SKLabelNode(text: "15", fontSize: 12, horizontalAlignment: .Center, verticalAlignment: .Baseline)
         label.fontColor = SKColor.greenColor()
         label.position = CGPoint(x:75,y:0)
         return label
         }()
     
-    private lazy var tatLabel:SKLabelNode = {[unowned self] in
+    private lazy var tatLabel:SKLabelNode = {
         let label = SKLabelNode(text: "15", fontSize: 12, horizontalAlignment: .Center, verticalAlignment: .Baseline)
         label.fontColor = SKColor.greenColor()
         label.position = CGPoint(x:170,y:0)
@@ -297,7 +297,7 @@ class DisplayScene: SKScene
         }()
 
     
-    private lazy var namesLabel:SKLabelNode = {[unowned self] in
+    private lazy var namesLabel:SKLabelNode = {
         let label = SKLabelNode(text: "GS                 TAS                    ISA           °C               SAT          °C              TAT         °C", fontSize: 10, horizontalAlignment: .Center, verticalAlignment: .Baseline)
         label.position = CGPointMake(0, -205)
         label.zPosition = 15
@@ -309,7 +309,7 @@ class DisplayScene: SKScene
         return label
     }()
 
-    private lazy var radarLabel:SKLabelNode = { [unowned self] in
+    private lazy var radarLabel:SKLabelNode = { 
         let label = SKLabelNode(text: "TERR/WX", fontSize: 10, horizontalAlignment: .Right, verticalAlignment: .Baseline)
         label.position = CGPointMake(195, -150)
         label.zPosition = 15
@@ -318,19 +318,19 @@ class DisplayScene: SKScene
         return label
     }()
     
-    private lazy var radarStatusLabel:SKLabelNode = { [unowned self] in
+    private lazy var radarStatusLabel:SKLabelNode = { 
         let label = SKLabelNode(text: "STBY", fontSize: 10, horizontalAlignment: .Right, verticalAlignment: .Baseline)
         label.position = CGPointMake(0, -10)
         return label
         }()
 
-    private lazy var radarTiltAngleLabel:SKLabelNode = { [unowned self] in
+    private lazy var radarTiltAngleLabel:SKLabelNode = { 
         let label = SKLabelNode(text: "T0.0", fontSize: 10, horizontalAlignment: .Right, verticalAlignment: .Baseline)
         label.position = CGPointMake(0, -20)
         return label
         }()
     
-    private lazy var trafficLable:SKLabelNode = { [unowned self] in
+    private lazy var trafficLable:SKLabelNode = { 
         let label = SKLabelNode(text: "TFC", fontSize: 10, horizontalAlignment: .Right, verticalAlignment: .Baseline)
         label.position = CGPointMake(195, -50)
         label.zPosition = 15
@@ -338,7 +338,7 @@ class DisplayScene: SKScene
         return label
         }()
     
-    private lazy var trafficStatusLabel:SKLabelNode = { [unowned self] in
+    private lazy var trafficStatusLabel:SKLabelNode = { 
         let label = SKLabelNode(text: "TA ONLY", fontSize: 10, horizontalAlignment: .Right, verticalAlignment: .Baseline)
         label.position = CGPointMake(0, -10)
         return label
@@ -526,7 +526,7 @@ class DisplayScene: SKScene
         }
 
         hsi.rose.removeAllActions()
-        hsi.rose.runAction(SKAction.rotateToAngle(target, duration: duration, shortestUnitArc: true), completion: {[unowned self] in self.hsi.cursorLine.alpha = 0})
+        hsi.rose.runAction(SKAction.rotateToAngle(target, duration: duration, shortestUnitArc: true), completion: { self.hsi.cursorLine.alpha = 0})
         attitude.refreshRollAngleWith(dHeading, duration: duration)
         
     }
@@ -535,7 +535,7 @@ class DisplayScene: SKScene
         let actionSpeed = airspeed/0.048/3600
         let speedVector = CGVectorMake(actionSpeed*sin(hsi.rose.zRotation), actionSpeed*cos(hsi.rose.zRotation))
         let flyAction =  SKAction.moveBy(speedVector, duration: 1)
-        hsi.plane.runAction(flyAction, completion: {[unowned self] in self.fly()})
+        hsi.plane.runAction(flyAction, completion: { self.fly()})
         altitudeTape.climbOrDescend()
     }
     

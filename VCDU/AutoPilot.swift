@@ -268,7 +268,7 @@ class AutoPilot: NSObject,SKSceneDelegate {
                     let nextHeading = headings[currentLeg+1]
                     if distanceToNextWaypoint < distanceToTurn(nextHeading) && !autoTurning {
                         autoTurning = true
-                        ++currentLeg
+                        currentLeg += 1
                         targetHeading = headings[currentLeg]
                         broadcastHeadingOrder()
                         //print("Turning,move to leg \(currentLeg)")

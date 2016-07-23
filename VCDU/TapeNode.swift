@@ -97,7 +97,7 @@ class TapeNode: SKNode {
             correctYPositonOfSubTape()
             let time = (preselectedValue-value).double
             refreshSubTape(time)
-            tape.runAction(SKAction.moveToY(yPositionOfTapeFor(preselectedValue), duration:abs(time)),completion:{[unowned self] in
+            tape.runAction(SKAction.moveToY(yPositionOfTapeFor(preselectedValue), duration:abs(time)),completion:{
                 self.subTape.removeAllActions()
                 self.correctYPositonOfSubTape()
                 })
@@ -126,7 +126,7 @@ class TapeNode: SKNode {
             count = self.subTapeIndexOf(value)
         }
         let roll = SKAction.moveBy(CGVectorMake(0, count*fontSize), duration:periodOfSubTape*abs(count/10).double)
-        subTape.runAction(roll, completion: {[unowned self] in
+        subTape.runAction(roll, completion: {
         self.subTape.position.y = 0
         self.refreshSubTape(direction)
         self.currentValueLabel.text = "\(Int(self.value/self.periodOfSubTape.cgfloat))"
@@ -135,7 +135,7 @@ class TapeNode: SKNode {
     
     //MARK: - Private Display Setup -
     
-    private lazy var preselectedValueLabel:SKLabelNode = { [unowned self] in
+    private lazy var preselectedValueLabel:SKLabelNode = { 
         let node = SKLabelNode(fontNamed: FontName.Arial)
         node.text = "\(Int(self.preselectedValue))"
         node.fontSize = self.fontSize
@@ -159,14 +159,14 @@ class TapeNode: SKNode {
     }()
     
     
-    private lazy var cursor:SKShapeNode = {[unowned self] in
+    private lazy var cursor:SKShapeNode = {
         let path = UIBezierPath()
         let node = SKShapeNode()
         node.path = path.CGPath
         return node
     }()
     
-    private lazy var currentValueNode:SKNode = {  [unowned self] in
+    private lazy var currentValueNode:SKNode = {  
         let node = SKNode()
         let frameNode = SKShapeNode()
         frameNode.fillColor = SKColor.blackColor()
@@ -203,7 +203,7 @@ class TapeNode: SKNode {
         return node
     }()
     
-    private lazy var currentValueLabel:SKLabelNode = {  [unowned self] in
+    private lazy var currentValueLabel:SKLabelNode = {  
         let node = SKLabelNode(fontNamed: FontName.Arial)
         if self.type == .Speed {
             node.text = "\(Int(self.originScale/10))"
@@ -222,7 +222,7 @@ class TapeNode: SKNode {
     
     
     
-     lazy var tape:SKShapeNode = { [unowned self] in
+     lazy var tape:SKShapeNode = { 
         let pathNode = SKShapeNode()
         let path = UIBezierPath()
         let intervalCount = Int((self.maximumScale-self.minimumScale+1)/self.interval)
@@ -281,7 +281,7 @@ class TapeNode: SKNode {
         return pathNode
     }()
     
-    private lazy var subTape:SKNode = { [unowned self] in
+    private lazy var subTape:SKNode = { 
         
         let node = SKNode()
         for i in 0...30 {
@@ -311,12 +311,12 @@ class TapeNode: SKNode {
         return self.size.width/5
     }
     
-    private lazy var background:SKSpriteNode = {[unowned self] in
+    private lazy var background:SKSpriteNode = {
         let node = SKSpriteNode(color: SKColor.blueColor(), size: self.size)
         return node
     }()
     
-    private lazy var cropMask:SKSpriteNode = { [unowned self] in
+    private lazy var cropMask:SKSpriteNode = { 
         let node = SKSpriteNode(color: SKColor.redColor(), size: self.size)
         return node
     }()

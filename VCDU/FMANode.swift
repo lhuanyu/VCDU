@@ -42,7 +42,7 @@ class FMANode: SKNode {
     
     //MARK: - Private UI Impelementation -
     
-    private lazy var rollModeLabel:SKLabelNode = {[unowned self] in
+    private lazy var rollModeLabel:SKLabelNode = {
         let label = SKLabelNode(fontNamed: FontName.Arial)
         label.text = "ROLL"
         label.fontColor = SKColor.greenColor()
@@ -53,7 +53,7 @@ class FMANode: SKNode {
         return label
     }()
     
-    private lazy var armedRollModeLabel:SKLabelNode = {[unowned self] in
+    private lazy var armedRollModeLabel:SKLabelNode = {
         let label = SKLabelNode(fontNamed: FontName.Arial)
         label.fontSize = self.fontSize-2
         label.horizontalAlignmentMode = .Center
@@ -62,7 +62,7 @@ class FMANode: SKNode {
         return label
     }()
     
-    lazy var thrustModeLable:SKLabelNode = {[unowned self] in
+    lazy var thrustModeLable:SKLabelNode = {
         let label = SKLabelNode(fontNamed: FontName.Arial)
         label.text = "SPD"
         label.fontColor = SKColor.greenColor()
@@ -73,7 +73,7 @@ class FMANode: SKNode {
         return label
     }()
     
-    lazy var xfrLabel:SKShapeNode = {[unowned self] in
+    lazy var xfrLabel:SKShapeNode = {
         let path = UIBezierPath()
         path.moveToPoint(CGPointMake(2, 0))
         path.addLineToPoint(CGPointMake(self.fontSize/2, self.fontSize/4))
@@ -86,7 +86,7 @@ class FMANode: SKNode {
         return node
     }()
     
-    lazy var apLabel:SKLabelNode = {[unowned self] in
+    lazy var apLabel:SKLabelNode = {
         let label = SKLabelNode(fontNamed: FontName.Arial)
         label.text = "APYD"
         label.fontSize = self.fontSize
@@ -97,7 +97,7 @@ class FMANode: SKNode {
         return label
     }()
     
-    lazy var atLabel:SKLabelNode = {[unowned self] in
+    lazy var atLabel:SKLabelNode = {
         let label = SKLabelNode(fontNamed: FontName.Arial)
         label.text = "AT"
         label.fontSize = self.fontSize
@@ -126,7 +126,7 @@ class FMANode: SKNode {
         armedRollModeLabel.runAction(flash)
     }
     
-    private lazy var background:SKSpriteNode = {[unowned self] in
+    private lazy var background:SKSpriteNode = {
         let node = SKSpriteNode(color: SKColor.blueColor(), size: self.size)
         let path = UIBezierPath()
         path.moveToPoint(CGPointMake(-self.size.width/4, self.size.height/2))

@@ -55,7 +55,7 @@ class VerticalSpeedScaleNode: SKNode {
         return self.size.width/3
     }
     
-    private lazy var background:SKSpriteNode = {[unowned self] in
+    private lazy var background:SKSpriteNode = {
         let node = SKSpriteNode(imageNamed: Constant.VerticalScaleBackground)
         node.size = self.size
         return node
@@ -73,7 +73,7 @@ class VerticalSpeedScaleNode: SKNode {
         return node
     }()
     
-    private lazy var valueLabel:SKLabelNode = {[unowned self] in
+    private lazy var valueLabel:SKLabelNode = {
     let label = SKLabelNode(fontNamed: FontName.Arial)
     label.fontColor = SKColor.greenColor()
     label.fontSize = self.fontSize
@@ -84,7 +84,7 @@ class VerticalSpeedScaleNode: SKNode {
     }()
     
     private let cropNode = SKCropNode()
-    private lazy var cropMask:SKSpriteNode = { [unowned self] in
+    private lazy var cropMask:SKSpriteNode = { 
         let node = SKSpriteNode(color: SKColor.redColor(), size: self.size)
         return node
         }()

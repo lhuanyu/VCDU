@@ -1,5 +1,5 @@
 //
-//  StringConstant.swift
+//  Constant.swift
 //  VCDU
 //
 //  Created by LuoHuanyu on 15/7/18.

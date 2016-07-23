@@ -179,7 +179,7 @@ class LEGSViewController: CDUViewController {
                 let identity = waypoint.name.componentsSeparatedByString(" ").first!
                 let newName = name != "" ? name : identity + " " + identityFormatter.stringFromNumber(customizedPointsCount)!
                 if let newWaypoint = waypoint.createWaypoint(lat, longitude: long, name:newName) {
-                    ++customizedPointsCount
+                    customizedPointsCount += 1
                     undoRoute = route
                     route?.insert(newWaypoint, atIndex: index)
                     return true
@@ -200,7 +200,7 @@ class LEGSViewController: CDUViewController {
         if let waypoint1 = findWaypoint(firstPointName).0, let waypoint2 = findWaypoint(secondPointName).0 {
             if let bearing1 = NSNumberFormatter().numberFromString(bearing1String)?.doubleValue, bearing2 = NSNumberFormatter().numberFromString(bearing2String)?.doubleValue {
                 if let newWaypoint = waypoint1.createWaypoint(bearing1, antherWaypoint: waypoint2, bearing2: bearing2, name: newName) {
-                    ++customizedPointsCount
+                    customizedPointsCount += 1
                     undoRoute = route
                     route?.insert(newWaypoint, atIndex: index)
                 }
@@ -479,7 +479,7 @@ class LEGSViewController: CDUViewController {
             route = undoRoute
             undoRoute = nil
             isModifying = false
-            --customizedPointsCount
+            customizedPointsCount -= 1
             lines[6].leftTitle = Constant.RWY
         }
     }
@@ -496,14 +496,14 @@ class LEGSViewController: CDUViewController {
     override func prevKey(sender: UIButton) {
         super.prevKey(sender)
         if currentPage > 1 && route != nil {
-            currentPage--
+            currentPage -= 1
         }
     }
     
     override func nextKey(sender: UIButton) {
         super.nextKey(sender)
         if currentPage < totalPage && route != nil  {
-            currentPage++
+            currentPage += 1
         }
     }
    

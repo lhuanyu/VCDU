@@ -15,7 +15,7 @@ class STATUSViewController: INDEXSubMenuViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateTime()
-        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(STATUSViewController.updateTime), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(animated: Bool) {

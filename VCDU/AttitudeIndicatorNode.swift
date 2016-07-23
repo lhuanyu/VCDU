@@ -48,13 +48,13 @@ class AttitudeIndicatorNode: SKCropNode {
     private let rollNode = SKNode()
     private let pitchNode = SKNode()
     
-    private lazy var rollMark:SKSpriteNode = { [unowned self] in
+    private lazy var rollMark:SKSpriteNode = { 
         let node = SKSpriteNode(imageNamed: "mark")
         node.size = self.size
         return node
     }()
     
-    private lazy var background:SKSpriteNode = {[unowned self] in
+    private lazy var background:SKSpriteNode = {
         let sky = SKSpriteNode(color: SKColor(red: 74/255, green: 186/255, blue: 246/255, alpha: 1), size: CGSizeMake(self.size.width*2, self.size.height*2))
         
         let ground = SKSpriteNode(color: SKColor.brownColor(), size: CGSizeMake(self.size.width*2, self.size.height*2))
@@ -63,14 +63,14 @@ class AttitudeIndicatorNode: SKCropNode {
         return sky
         }()
     
-    private lazy var cropMask:SKSpriteNode = { [unowned self] in
+    private lazy var cropMask:SKSpriteNode = { 
         let node = SKSpriteNode(color: SKColor.redColor(), size: self.size)
         node.size = self.size
         return node
         }()
     
     
-    private lazy var pitchMark:SKShapeNode = { [unowned self] in
+    private lazy var pitchMark:SKShapeNode = { 
         let pitchAngleMark = SKShapeNode()
         let path = UIBezierPath()
         for i in -16...16 {
@@ -99,7 +99,7 @@ class AttitudeIndicatorNode: SKCropNode {
         return pitchAngleMark
     } ()
     
-    private lazy var pitchMarkCropNode:SKCropNode = { [unowned self] in
+    private lazy var pitchMarkCropNode:SKCropNode = { 
         let mask = SKSpriteNode(imageNamed: "roundMask")
         mask.size = CGSizeMake(self.size.width-20, self.size.width-20)
         let crop = SKCropNode()

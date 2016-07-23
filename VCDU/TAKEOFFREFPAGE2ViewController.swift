@@ -29,7 +29,7 @@ class TAKEOFFREFPAGE2ViewController: TAKEOFFREFViewController {
     override func pressL5() {
         keySoundPlayer.play()
         if engBleed < 2{
-            ++engBleed
+            engBleed += 1
         } else {
             engBleed = 0
         }

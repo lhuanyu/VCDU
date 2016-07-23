@@ -62,7 +62,7 @@
 		E4D0C7081B2B2A0D00BFAAD3 /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D0C7071B2B2A0D00BFAAD3 /* Performance.swift */; };
 		E4DB22681AC3E7A100571A35 /* CDUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB22671AC3E7A100571A35 /* CDUViewController.swift */; };
 		E4DB226A1AC3E94800571A35 /* FPLNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB22691AC3E94800571A35 /* FPLNViewController.swift */; };
-		E4DF7AD31B5A7A15002B54A2 /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF7AD21B5A7A15002B54A2 /* StringConstant.swift */; };
+		E4DF7AD31B5A7A15002B54A2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF7AD21B5A7A15002B54A2 /* Constant.swift */; };
 		E4E86CCA1B247C8400FCFE54 /* Takeoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E86CC91B247C8400FCFE54 /* Takeoff.swift */; };
 		E4E86CCE1B247C8400FCFE54 /* Vnav.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E86CCD1B247C8400FCFE54 /* Vnav.swift */; };
 		E4E86CD01B247C8500FCFE54 /* N1Limit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E86CCF1B247C8500FCFE54 /* N1Limit.swift */; };
@@ -143,7 +143,7 @@
 		E4D1E8FB1AD6769D00FA3F3F /* VCDU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VCDU-Bridging-Header.h"; path = "VCDUTests/VCDU-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		E4DB22671AC3E7A100571A35 /* CDUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUViewController.swift; sourceTree = "<group>"; };
 		E4DB22691AC3E94800571A35 /* FPLNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPLNViewController.swift; path = ../FPLNViewController.swift; sourceTree = "<group>"; };
-		E4DF7AD21B5A7A15002B54A2 /* StringConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
+		E4DF7AD21B5A7A15002B54A2 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E4E86CC91B247C8400FCFE54 /* Takeoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Takeoff.swift; path = ../Takeoff.swift; sourceTree = "<group>"; };
 		E4E86CCD1B247C8400FCFE54 /* Vnav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vnav.swift; path = ../Vnav.swift; sourceTree = "<group>"; };
 		E4E86CCF1B247C8500FCFE54 /* N1Limit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = N1Limit.swift; path = ../N1Limit.swift; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				E4327DF51AB5B25700F88E92 /* AppDelegate.swift */,
-				E4B027901AC6EC9E00A46942 /* CDUDisplayLineView.swift */,
 				E4327DFC1AB5B25700F88E92 /* Main.storyboard */,
+				E4705F051B6074EA00794A2C /* SKClass */,
 				E4B027941AC8385900A46942 /* CDUVIewControllers */,
 				E4327DFF1AB5B25700F88E92 /* Images.xcassets */,
 				E4327E011AB5B25700F88E92 /* LaunchScreen.xib */,
@@ -291,6 +291,7 @@
 		E4705F051B6074EA00794A2C /* SKClass */ = {
 			isa = PBXGroup;
 			children = (
+				E4705F031B5F163E00794A2C /* AutoPilot.swift */,
 				E48C286A1B5406730086886F /* DisplayScene.swift */,
 				E4705F061B60751E00794A2C /* FMANode.swift */,
 				E4705F081B607DF600794A2C /* HSINode.swift */,
@@ -333,6 +334,7 @@
 		E4B027941AC8385900A46942 /* CDUVIewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4B027901AC6EC9E00A46942 /* CDUDisplayLineView.swift */,
 				E4DB22671AC3E7A100571A35 /* CDUViewController.swift */,
 				E43F858E1B22D64200024981 /* PERF */,
 				E49BA1F31B2BF5B700BA60D5 /* INDEX */,
@@ -342,9 +344,7 @@
 				E450C4781B1C5159001E7F9C /* DSPLADVViewController.swift */,
 				C6920A9D1BB2882D00F6EB14 /* LEGSViewController.swift */,
 				E419A7291ADFC80D00F37C07 /* MFDViewController.swift */,
-				E4705F051B6074EA00794A2C /* SKClass */,
-				E4705F031B5F163E00794A2C /* AutoPilot.swift */,
-				E4DF7AD21B5A7A15002B54A2 /* StringConstant.swift */,
+				E4DF7AD21B5A7A15002B54A2 /* Constant.swift */,
 				E4705F011B5F160800794A2C /* UIBezierPathExtension.swift */,
 			);
 			name = CDUVIewControllers;
@@ -487,7 +487,7 @@
 				E476AEF51B8ECE5A009CB7ED /* VerticalSpeedScaleNode.swift in Sources */,
 				E4DB226A1AC3E94800571A35 /* FPLNViewController.swift in Sources */,
 				E4E86CDA1B247C8500FCFE54 /* Approach.swift in Sources */,
-				E4DF7AD31B5A7A15002B54A2 /* StringConstant.swift in Sources */,
+				E4DF7AD31B5A7A15002B54A2 /* Constant.swift in Sources */,
 				E419A72A1ADFC80D00F37C07 /* MFDViewController.swift in Sources */,
 				E4A8CCC11B20436C0023A095 /* PERFINITPAGE3ViewController.swift in Sources */,
 				E43F85801B21D01700024981 /* TAKEOFFREFPAGE3ViewController.swift in Sources */,
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = VCDU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.arj21-cdu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VCDU/VCDU-Bridging-Header.h";
@@ -686,7 +686,7 @@
 				INFOPLIST_FILE = VCDU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.arj21-cdu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VCDU/VCDU-Bridging-Header.h";
@@ -793,7 +793,7 @@
 				INFOPLIST_FILE = VCDU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.comac.arj21-cdu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VCDU/VCDU-Bridging-Header.h";

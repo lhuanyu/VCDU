@@ -85,7 +85,7 @@ class HSINode: SKNode {
     //MARK: - UI Setting -
     
     
-    lazy var headingCursor:SKShapeNode = { [unowned self] in
+    lazy var headingCursor:SKShapeNode = { 
         let cursorPath = UIBezierPath()
         cursorPath.moveToPoint(CGPointMake(-8, 1.03*self.radius))
         cursorPath.addLineToPoint(CGPointMake(-5, 1.03 * self.radius))
@@ -102,7 +102,7 @@ class HSINode: SKNode {
         return node
         }()
     
-    lazy var headingLabel:SKLabelNode = { [unowned self] in
+    lazy var headingLabel:SKLabelNode = { 
         let node = SKLabelNode(fontNamed:FontName.Arial)
         node.text = "360"
         node.fontSize = self.fontSize+4
@@ -112,7 +112,7 @@ class HSINode: SKNode {
         return node
         }()
     
-    lazy var preselectingHeadingLabel:SKLabelNode = { [unowned self] in
+    lazy var preselectingHeadingLabel:SKLabelNode = { 
         let node = SKLabelNode(fontNamed: FontName.Arial)
         node.text = "HDG 360"
         node.fontSize = self.fontSize
@@ -122,7 +122,7 @@ class HSINode: SKNode {
         return node
         }()
     
-    lazy var cursorLine:SKShapeNode = { [unowned self] in
+    lazy var cursorLine:SKShapeNode = { 
         let path = UIBezierPath()
         path.moveToPoint(self.position)
         path.addLineToPoint(CGPointMake(0, self.radius))
@@ -137,7 +137,7 @@ class HSINode: SKNode {
         return 11*radius/150
     }
     
-    private lazy var innerRadiusLabel:SKLabelNode = {[unowned self] in
+    private lazy var innerRadiusLabel:SKLabelNode = {
         let node = SKLabelNode(fontNamed: FontName.Arial)
         node.text = "5"
         node.fontSize = self.fontSize
@@ -150,7 +150,7 @@ class HSINode: SKNode {
         return node
         }()
     
-    private lazy var outterRadiusLabel:SKLabelNode = {[unowned self] in
+    private lazy var outterRadiusLabel:SKLabelNode = {
         let node = SKLabelNode(fontNamed: FontName.Arial)
         node.text = "10"
         node.fontSize = self.fontSize
@@ -238,7 +238,7 @@ class HSINode: SKNode {
         }
     }
     
-    private lazy var mask:SKShapeNode = { [unowned self] in
+    private lazy var mask:SKShapeNode = { 
         let coverPath = UIBezierPath(arcCenter: self.position, radius: self.radius+15, startAngle: CGFloat(M_PI/6), endAngle: CGFloat(M_PI*5/6), clockwise: false)
         let cover = SKShapeNode(path: coverPath.CGPath)
         cover.lineWidth = self.radius/4

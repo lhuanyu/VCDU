@@ -48,7 +48,7 @@ class N1LIMITViewController: CDUViewController {
     override func pressL4() {
         super.pressL3()
         if trMode < 2 {
-            ++trMode
+            trMode += 1
         } else {
             trMode = 0
         }

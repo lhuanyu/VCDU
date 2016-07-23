@@ -185,14 +185,14 @@ class DEPARRDetailViewController: CDUViewController {
     override func prevKey(sender: UIButton) {
         super.prevKey(sender)
         if currentPage > 1 && airport != nil {
-            currentPage--
+            currentPage -= 1
         }
     }
     
     override func nextKey(sender: UIButton) {
         super.nextKey(sender)
         if currentPage < totalPage && airport != nil  {
-            currentPage++
+            currentPage += 1
         }
     }
     
